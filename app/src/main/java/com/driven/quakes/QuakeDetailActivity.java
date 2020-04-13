@@ -1,5 +1,9 @@
 package com.driven.quakes;
-
+/**
+ *
+ * Author Simon John Sanga
+ * S1803451
+ */
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

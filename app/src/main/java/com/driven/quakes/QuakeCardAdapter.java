@@ -1,4 +1,9 @@
 package com.driven.quakes;
+/**
+ *
+ * Author Simon John Sanga
+ * S1803451
+ */
 
 
 import android.support.v7.widget.CardView;

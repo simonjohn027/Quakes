@@ -1,6 +1,10 @@
 package com.driven.quakes;
 
-
+/**
+ *
+ * Author Simon John Sanga
+ * S1803451
+ */
 import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;

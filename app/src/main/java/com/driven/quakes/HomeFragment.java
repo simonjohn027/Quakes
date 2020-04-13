@@ -12,7 +12,9 @@ import java.util.ArrayList;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ *
+ * Author Simon John Sanga
+ * S1803451
  */
 public class HomeFragment extends Fragment {
     ArrayList<Quake> quakeArrayList = new ArrayList<Quake>();

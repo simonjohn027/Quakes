@@ -1,4 +1,11 @@
 package com.driven.quakes;
+
+/**
+ *
+ * Author Simon John Sanga
+ * S1803451
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;

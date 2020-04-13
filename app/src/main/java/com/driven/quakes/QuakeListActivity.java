@@ -1,5 +1,11 @@
 package com.driven.quakes;
 
+/**
+ *
+ * Author Simon John Sanga
+ * S1803451
+ */
+
 
 import android.app.ProgressDialog;
 import android.content.ComponentName;
@@ -11,6 +17,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,13 +44,22 @@ public class QuakeListActivity extends AppCompatActivity {
     private PositionService position;
     private boolean bound = false;
     public String locationName = "";
+    ArrayList<Quake>arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quake_list);
-        Intent data = getIntent();
-        ArrayList<Quake> arrayList = data.getParcelableArrayListExtra("quakesbundle");
+        if(savedInstanceState == null){
+            Intent data = getIntent();
+            arrayList = data.getParcelableArrayListExtra("quakesbundle");
+        }
+        else{
+
+            arrayList = savedInstanceState.getParcelableArrayList("savedData");
+            locationName = savedInstanceState.getString("locationName");
+
+        }
         if(arrayList.size() != 0) {
 
             Bundle bundle = new Bundle();
@@ -102,6 +119,15 @@ public class QuakeListActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putParcelableArrayList("savedData",arrayList);
+        savedInstanceState.putString("locationName",locationName);
+    }
+
+
+
+    @Override
     protected void onStart() {
         super.onStart();
         Intent intent = new Intent(this, PositionService.class);
@@ -132,7 +158,6 @@ public class QuakeListActivity extends AppCompatActivity {
                 if (bound && position != null) {
                     try {
                         locationName = position.getLocationName();
-                        System.out.println("Locataionnnnnnnnnnnnnnnnn " + locationName);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

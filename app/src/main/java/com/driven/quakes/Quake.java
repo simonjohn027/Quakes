@@ -1,5 +1,11 @@
 package com.driven.quakes;
 
+/**
+ *
+ * Author Simon John Sanga
+ * S1803451
+ */
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
