@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Quakes</string>
+
+    <string name="title_top">Top fragment</string>
+    <string name="detail">Detail</string>
+
+    <string name="home_tab">Home</string>
+    <string name="quakes_tab">Quakes</string>
+    <string name="quake_tab">Quake</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
